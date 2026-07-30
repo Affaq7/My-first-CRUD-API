@@ -12,6 +12,7 @@ app=FastAPI()
 
 @app.get("/")
 def root():
+    """Returns API name and version."""
     return {
         "name": "Task API",
         "version": "1.0",
@@ -20,6 +21,7 @@ def root():
 
 @app.get("/health")
 def health():
+    """Checks if the server is alive."""
     return {
         "status":"ok"
     }
@@ -35,10 +37,12 @@ tasks = [
 
 @app.get("/tasks")
 def get_tasks():
+    """Returns a list of all tasks in the in-memory database."""
     return tasks
 
 @app.get("/tasks/{task_id}")
 def get_task(task_id:int):
+    """Returns a single task matching the provided ID."""
     for task in tasks:
         if task["id"]==task_id:
             return task
@@ -50,6 +54,7 @@ class TaskCreate(BaseModel):
 
 @app.post("/tasks", status_code=201, responses={100:{"description":"Invalid Input - Title missing or empty" }})
 def create_task(task:TaskCreate):
+    """Creates a new task and assigns it a unique ID."""
     if not task.title or not task.title.strip():
         return JSONResponse(status_code=400, content={"error":"Title is required"})
 
@@ -65,6 +70,7 @@ class TaskUpdate(BaseModel):
 
 @app.put("/tasks/{id}", responses={400:{"description":"Invalid Body"}, 404:{"description":"Task not found"}})
 def update_task(id:int, task_in:TaskUpdate):
+    """Updates the title or completion status of an existing task."""
     if task_in.title is None and task_in.done is None:
         return JSONResponse(status_code=400, content={"error": "Body cannot be empty"})
     
@@ -82,6 +88,7 @@ def update_task(id:int, task_in:TaskUpdate):
 
 @app.delete("/tasks/{id}", responses={404: {"description": "Task not found"}})
 def delete_task(id:int):
+    """Deletes a task from the list based on its ID."""
     for i, task in enumerate(tasks):
         if task["id"]==id:
             tasks.pop(i)
