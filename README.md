@@ -34,8 +34,8 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 
 ## Example request & Output Screenshots (Curl)
 
-### Stage 3
+### Stage 3 (POST)
 ![alt text](/Screenshots/Stage3.png)
 
-### Stage 4
+### Stage 4 (PUT & DELETE)
 ![alt text](/Screenshots/Stage4.png)
