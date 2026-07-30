@@ -32,7 +32,7 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 | PUT    | /tasks/{id}   | Update a task              |
 | DELETE | /tasks/{id}   | Delete a task               |
 
-## Example request & Output Screenshots (Curl)
+## Example Request & Output Screenshots (Curl)
 
 ### Stage 1 (GET)
 ![Stage 1](/Screenshots/Stage1.png)
