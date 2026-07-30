@@ -32,20 +32,10 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 | PUT    | /tasks/{id}   | Update a task              |
 | DELETE | /tasks/{id}   | Delete a task               |
 
-## Example request
-
-```
-curl.exe -i -X POST http://localhost:8000/tasks -H "Content-Type: application/json" -d "@body.json"
-```
-
-```
-HTTP/1.1 201 Created
-content-type: application/json
-
-{"id":4,"title":"Buy milk","done":false}
-```
-
-## Output Screenshots (Curl)
+## Example request & Output Screenshots (Curl)
 
 ### Stage 3
 ![alt text](/Screenshots/Stage3.png)
+
+### Stage 4
+![alt text](/Screenshots/Stage4.png)
