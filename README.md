@@ -35,16 +35,16 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 ## Example request & Output Screenshots (Curl)
 
 ### Stage 1 (GET)
-![alt text](/Screenshots/Stage1.png)
+![Stage 1](/Screenshots/Stage1.png)
 
 ### Stage 2 (GET Task by ID)
-![alt text](/Screenshots/Stage2.png)
+![Stage 2](/Screenshots/Stage2.png)
 
 ### Stage 3 (POST)
-![alt text](/Screenshots/Stage3.png)
+![Stage 3](/Screenshots/Stage3.png)
 
 ### Stage 4 (PUT & DELETE)
-![alt text](/Screenshots/Stage4.png)
+![Stage 4](/Screenshots/Stage4.png)
 
 ### Stage 5 (Swagger UI)
 See the [Swagger UI PDF](CRUD%20API%20-%20Swagger%20UI.pdf).
