@@ -2,6 +2,9 @@
 from fastapi import FastAPI
 # pyrefly: ignore [missing-import]
 from fastapi.responses import JSONResponse
+# pyrefly: ignore [missing-import]
+from pydantic import BaseModel
+from typing import Optional
 
 app=FastAPI()
 
@@ -40,3 +43,17 @@ def get_task(task_id:int):
         if task["id"]==task_id:
             return task
     return JSONResponse(status_code=404, content={"error":f"Task {task_id} Not Found"})
+
+#stage 3
+class TaskCreate(BaseModel):
+    title: Optional[str]=None
+
+@app.post("/tasks", status_code=201, responses={100:{"description":"Invalid Input - Title missing or empty" }})
+def create_task(task:TaskCreate):
+    if not task.title or not task.title.strip():
+        return JSONResponse(status_code=400, content={"error":"Title is required"})
+
+    new_id=max((t["id"] for t in tasks), default=0)+1
+    new_task = {"id":new_id, "title": task.title, "done":False}
+    tasks.append(new_task)
+    return new_task
