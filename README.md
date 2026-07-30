@@ -34,6 +34,12 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 
 ## Example request & Output Screenshots (Curl)
 
+### Stage 1 (GET)
+![alt text](/Screenshots/Stage1.png)
+
+### Stage 2 (GET Task by ID)
+![alt text](/Screenshots/Stage2.png)
+
 ### Stage 3 (POST)
 ![alt text](/Screenshots/Stage3.png)
 
