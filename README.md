@@ -1,1 +1,1 @@
-![alt text](image.png)
+![alt text](/Screenshots/Stage3.png)
