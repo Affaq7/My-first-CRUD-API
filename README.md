@@ -41,4 +41,4 @@ A simple CRUD API for managing a to-do list, built with FastAPI. Data is stored 
 ![alt text](/Screenshots/Stage4.png)
 
 ### Stage 5 (Swagger UI)
-See the [assignment brief](CRUD%20API%20-%20Swagger%20UI.pdf).
+See the [Swagger UI PDF](CRUD%20API%20-%20Swagger%20UI.pdf).
